@@ -12,7 +12,7 @@ def decode(phrase, shift):
     x = ""
     for letter in phrase:
         value = alphabet.index(letter)
-        value = value + shift
+        value = (value + shift)%26
         shifted_alphabet = alphabet[value]
         x = x + shifted_alphabet
     return x
