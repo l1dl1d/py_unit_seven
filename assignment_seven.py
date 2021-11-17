@@ -3,7 +3,7 @@ def encode(phrase, shift):
     x = ""
     for letter in phrase:
         value = alphabet.index(letter)
-        value = (value + shift)%26
+        value = value + shift
         shifted_alphabet = alphabet[value]
         x = x + shifted_alphabet
     return x
@@ -12,19 +12,19 @@ def decode(phrase, shift):
     x = ""
     for letter in phrase:
         value = alphabet.index(letter)
-        value = (value - shift)%26
+        value = value + shift
         shifted_alphabet = alphabet[value]
         x = x + shifted_alphabet
     return x
 def main():
-    choice = input("press e to encode, d to decode or q to quit.")
-    phrase = input("please enter text to be encoded.")
-    shift = input("please enter the key (0-25):")
+    choice = input("press e, to encode, d to decode, or q to quit.")
     if choice == e:
-        print(encode())
+        phrase = input("please enter text to be encoded:")
+        return encode()
     elif choice == d:
-        print(decode())
+
+        return decode()
     elif choice == q:
         quit()
-
-
+if __name__ == '__main__':
+    main()
